@@ -68,7 +68,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
         if (name === 'posprzataj') {
             // Send a message containing random gif
-            let content = 'https://tenor.com/pl/view/dog-roomba-gif-4429139436809236648'
+            let content = 'https://cdn.discordapp.com/attachments/1214906463798165534/1518686985164947589/dog-roomba.gif?ex=6a3ad2f9&is=6a398179&hm=f7d0294a29b7b809f5ba6a537434b41aea6e7a28e58486391375a90adf371190&'
             return res.send({
                 type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
                 data: {
