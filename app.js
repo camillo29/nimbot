@@ -10,6 +10,8 @@ import {
   verifyKeyMiddleware,
 } from 'discord-interactions';
 
+import {getRandomGif} from './utils.js';
+
 // Create an express app
 const app = express();
 // Get port, or default to 3000
@@ -52,6 +54,28 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
                     },
                 });
             }
+
+        if (name === 'randomgif') {
+            // Send a message containing random gif
+            let content = getRandomGif();
+            return res.send({
+                type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+                data: {
+                    content: content
+                },
+            });
+        }
+
+        if (name === 'posprzataj') {
+            // Send a message containing random gif
+            let content = 'https://tenor.com/pl/view/dog-roomba-gif-4429139436809236648'
+            return res.send({
+                type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+                data: {
+                    content: content
+                },
+            });
+        }
 
         // if (name === 'nextevent') {
         //     console.log('enter nextevent');

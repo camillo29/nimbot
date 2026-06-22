@@ -42,6 +42,14 @@ export function getRandomEmoji() {
   return emojiList[Math.floor(Math.random() * emojiList.length)];
 }
 
+export function getRandomGif() {
+    const gifList = ['https://cdn.discordapp.com/attachments/1214906463798165534/1518685295178940498/NimfeiSpin.gif?ex=6a3ad166&is=6a397fe6&hm=d207efb4f9c050a5002ad751d44ddc8003d4746925a882dc23a818e1f58763b4&',
+        'https://cdn.discordapp.com/attachments/1214906463798165534/1518685304985227374/NimfeiNvm.gif?ex=6a3ad168&is=6a397fe8&hm=2e5515f220092816fc8e6341963051cc8b2ad563315c0693c5a8f148a785e7f2&',
+        'https://cdn.discordapp.com/attachments/1214906463798165534/1518685309372731392/NimfeiBrick.gif?ex=6a3ad169&is=6a397fe9&hm=be88c89454233c705c929077f7fe9a5f4af9a016ff4f5d8965184c13451bbbc5&',
+        'https://cdn.discordapp.com/attachments/1214906463798165534/1518685346513031248/lemon.gif?ex=6a3ad172&is=6a397ff2&hm=79874fc7496a76692b5f3fd5275775f317696e69e316ab45ca50bdc1bb6af0f1&'];
+    return gifList[Math.floor(Math.random() * gifList.length)];
+}
+
 export function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
