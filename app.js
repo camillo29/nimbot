@@ -68,7 +68,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
         if (name === 'zwierze') {
             // Send a message containing random gif
-            let content = 'Dzisiaj jesteś: ' + getRandomAnimal();
+            let content = 'Dzisiaj jesteś ' + getRandomAnimal();
             return res.send({
                 type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
                 data: {
