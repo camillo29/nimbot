@@ -26,6 +26,14 @@ const POSPRZATAJ = {
     contexts: [0, 1, 2],
 }
 
-const ALL_COMMANDS = [TEST_COMMAND, RANDOM_GIF, POSPRZATAJ];
+const RANDOM_ANIMAL = {
+    name: 'zwierze',
+    description: 'Jakim zwierzęciem dzisiaj jesteś',
+    type: 1,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+}
+
+const ALL_COMMANDS = [TEST_COMMAND, RANDOM_GIF, POSPRZATAJ, RANDOM_ANIMAL];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

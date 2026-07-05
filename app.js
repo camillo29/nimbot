@@ -10,7 +10,7 @@ import {
   verifyKeyMiddleware,
 } from 'discord-interactions';
 
-import {getRandomGif} from './utils.js';
+import {getRandomAnimal, getRandomGif} from './utils.js';
 
 // Create an express app
 const app = express();
@@ -58,6 +58,17 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         if (name === 'randomgif') {
             // Send a message containing random gif
             let content = getRandomGif();
+            return res.send({
+                type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+                data: {
+                    content: content
+                },
+            });
+        }
+
+        if (name === 'zwierze') {
+            // Send a message containing random gif
+            let content = 'Dzisiaj jesteś: ' + getRandomAnimal();
             return res.send({
                 type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
                 data: {
