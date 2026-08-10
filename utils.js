@@ -241,7 +241,6 @@ export function getRandomAnimal() {
         'kukułką',
         'labradorem',
         'lamą',
-        'łasiczką',
         'makrelą',
         'molem',
         'morświnem',
