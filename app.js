@@ -12,6 +12,8 @@ import {
 
 import {getRandomAnimal, getRandomGif} from './utils.js';
 
+import schedule from 'node-schedule'
+
 // Create an express app
 const app = express();
 // Get port, or default to 3000
@@ -20,6 +22,7 @@ const client = new Client({
     intents: [
         GatewayIntentBits.Guilds]
 })
+const livenessScheduler = schedule
 
 const guildId = '1502615700315836499';
 await client.login(process.env.DISCORD_TOKEN).then(r => console.log('logged in', r));
@@ -120,6 +123,10 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
   console.error('unknown interaction type', type);
   return res.status(400).json({ error: 'unknown interaction type' });
 });
+
+const livenessCheck = livenessScheduler.scheduleJob('*/5 * * * *', function(){
+    console.log('I am alive');
+})
 
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);
