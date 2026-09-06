@@ -251,7 +251,8 @@ export function getRandomAnimal() {
         'ratlerkiem',
         'ryjówką',
         'sardynką',
-        'zebrą'
+        'zebrą',
+        'jeleniem'
     ];
     return animals[Math.floor(Math.random() * animals.length)];
 }
