@@ -25,7 +25,7 @@ const client = new Client({
 const livenessScheduler = schedule
 
 const guildId = '1502615700315836499';
-const ANIMAL_COOLDOWN_ENABLED = true;
+const ANIMAL_COOLDOWN_ENABLED = false;
 await client.login(process.env.DISCORD_TOKEN).then(r => console.log('logged in', r));
 
 
