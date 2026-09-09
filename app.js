@@ -25,6 +25,7 @@ const client = new Client({
 const livenessScheduler = schedule
 
 const guildId = '1502615700315836499';
+const ANIMAL_COOLDOWN_ENABLED = true;
 await client.login(process.env.DISCORD_TOKEN).then(r => console.log('logged in', r));
 
 
@@ -49,6 +50,8 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
      */
     if (type === InteractionType.APPLICATION_COMMAND) {
         const {name} = data;
+        const user = member.user;
+
         if (name === 'test') {
                 return res.send({
                     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -70,8 +73,21 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         }
 
         if (name === 'zwierze') {
-            // Send a message containing random gif
+            // Send a message containing random animal
+            const lockedAt = await kv.get(user.id);
+            if (ANIMAL_COOLDOWN_ENABLED && lockedAt !== null) {
+                if (new Date().getDay() === lockedAt) {
+                    return res.send({
+                        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+                        data: {
+                            content: 'Zwierze można losować tylko raz dziennie, spróbuj jutro',
+                            flags: 64,
+                        },
+                    });
+                }
+            }
             let content = 'Dzisiaj jesteś ' + getRandomAnimal();
+            await kv.set(user.id, new Date().getDay());
             return res.send({
                 type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
                 data: {
