@@ -76,7 +76,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
             // Send a message containing random animal
             const lockedAt = await kv.get(user.id);
             if (ANIMAL_COOLDOWN_ENABLED && lockedAt !== null) {
-                const day = new Date().getDay();
+                const day = new Date().getDate()
                 console.log("comparing " + day + " to " + lockedAt);
                 if (new Date().getDay() === lockedAt) {
                     return res.send({
@@ -89,7 +89,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
                 }
             }
             let content = 'Dzisiaj jesteś ' + getRandomAnimal();
-            await kv.set(user.id, new Date().getDay());
+            await kv.set(user.id, new Date().getDate());
             return res.send({
                 type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
                 data: {
