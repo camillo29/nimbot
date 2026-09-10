@@ -78,7 +78,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
             if (ANIMAL_COOLDOWN_ENABLED && lockedAt !== null) {
                 const day = new Date().getDate()
                 console.log("comparing " + day + " to " + lockedAt);
-                if (new Date().getDay() === lockedAt) {
+                if (new Date().getDate() === lockedAt) {
                     return res.send({
                         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
                         data: {
