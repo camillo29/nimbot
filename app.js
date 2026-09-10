@@ -25,7 +25,7 @@ const client = new Client({
 const livenessScheduler = schedule
 
 const guildId = '1502615700315836499';
-const ANIMAL_COOLDOWN_ENABLED = false;
+const ANIMAL_COOLDOWN_ENABLED = true;
 await client.login(process.env.DISCORD_TOKEN).then(r => console.log('logged in', r));
 
 
@@ -76,6 +76,8 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
             // Send a message containing random animal
             const lockedAt = await kv.get(user.id);
             if (ANIMAL_COOLDOWN_ENABLED && lockedAt !== null) {
+                const day = new Date().getDay();
+                console.log("comparing " + day + " to " + lockedAt);
                 if (new Date().getDay() === lockedAt) {
                     return res.send({
                         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
