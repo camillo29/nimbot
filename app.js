@@ -52,15 +52,6 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         const {name} = data;
         const user = member.user;
 
-        if (name === 'test') {
-                return res.send({
-                    type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-                    data: {
-                        content: 'test aplikacji'
-                    },
-                });
-            }
-
         if (name === 'randomgif') {
             // Send a message containing random gif
             let content = getRandomGif();
