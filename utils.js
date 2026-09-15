@@ -48,7 +48,8 @@ export function getRandomGif() {
         'https://cdn.discordapp.com/attachments/1214906463798165534/1518685309372731392/NimfeiBrick.gif?ex=6a3ad169&is=6a397fe9&hm=be88c89454233c705c929077f7fe9a5f4af9a016ff4f5d8965184c13451bbbc5&',
         'https://cdn.discordapp.com/attachments/1214906463798165534/1518685346513031248/lemon.gif?ex=6a3ad172&is=6a397ff2&hm=79874fc7496a76692b5f3fd5275775f317696e69e316ab45ca50bdc1bb6af0f1&',
         'https://cdn.discordapp.com/attachments/1546549656622735411/1549018681562894366/NimfeiBrick-ezgif.com-reverse.gif?ex=6aa92b91&is=6aa7da11&hm=7057f574b4b4e5d757cbb0a1642afc83441b13eee27b94d5311a2f5f0e54aa19&',
-        'https://cdn.discordapp.com/attachments/1546549656622735411/1548396583349920015/freak.avif?ex=6aaadcb1&is=6aa98b31&hm=6653438bc6de358e7fca9562f29b83af77d98eed2c14af4cd93485e03968da8e&'];
+        'https://cdn.discordapp.com/attachments/1546549656622735411/1548396583349920015/freak.avif?ex=6aaadcb1&is=6aa98b31&hm=6653438bc6de358e7fca9562f29b83af77d98eed2c14af4cd93485e03968da8e&',
+        'https://cdn.discordapp.com/attachments/1491490221701988365/1519442724804366496/balon.gif?ex=6aaa568f&is=6aa9050f&hm=c10f84b5699856331c5eba77c8b671f97a22027f806c0319239756d8585e3614&'];
     return gifList[Math.floor(Math.random() * gifList.length)];
 }
 
