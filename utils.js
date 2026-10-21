@@ -53,7 +53,8 @@ export function getRandomGif() {
         'https://cdn.discordapp.com/attachments/1502261807190904876/1536803830795210753/fei_pwease_anim.gif?ex=6aaae019&is=6aa98e99&hm=33598f3f04a0d9df4db32577d425d460f4fb51475ed0971652c6cda836e8a374&',
         'https://cdn.discordapp.com/attachments/1502622215944802424/1550167483388919939/MNIOM.gif?ex=6ab693f8&is=6ab54278&hm=2184faf60a1b0a5e5d443e090e4ed1a489b6d9e0a9d07f8f4bc82234579d36c0&',
         'https://cdn.discordapp.com/attachments/1546549656622735411/1556374675142217839/20260921_UnsightlyTrappedLadiesShazBotstix-FGt84h3rfq8ivfDn_sourceonline-video-cutter.com-ezgif.com-crop.gif?backend=b2&ex=6ac4971e&is=6ac3459e&hm=f2b3766457bc8b772533335496fe01de959f4a745f96c26c9a15e831700cd75b&',
-        'https://cdn.discordapp.com/attachments/1546549656622735411/1561027728365453332/Desktop2026.10.17-16.40online-video-cutter.com-ezgif.com-video-to-gif-converter.gif?ex=6ad4dbdc&is=6ad38a5c&hm=e1baf71e1aefbfea1bb09393b564f6834bd94c633e2b8235b747fed0bb759480&'];
+        'https://cdn.discordapp.com/attachments/1546549656622735411/1561027728365453332/Desktop2026.10.17-16.40online-video-cutter.com-ezgif.com-video-to-gif-converter.gif?ex=6ad4dbdc&is=6ad38a5c&hm=e1baf71e1aefbfea1bb09393b564f6834bd94c633e2b8235b747fed0bb759480&',
+        'https://cdn.discordapp.com/attachments/1491490221701988365/1562444740933197935/nomnom.gif?ex=6ada038f&is=6ad8b20f&hm=b3f891533592470df264bc9ddc2f01f4ce9ad95aa84e9b1ffd4f08a2313bcccf&'];
     return gifList[Math.floor(Math.random() * gifList.length)];
 }
 
